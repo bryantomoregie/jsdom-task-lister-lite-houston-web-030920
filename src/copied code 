@@ -1,0 +1,49 @@
+
+let rock = document.createElement('img')
+document.body.append(rock)
+
+get the string from the form
+create list tags 
+Insert string in tags 
+
+document.querySelector("#tasks").innerHTML += `<li>${task.value}</li>`
+   button.addEventListener('click', document.querySelector('#li').remove())
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  let form = document.querySelector("#create-task-form") 
+  
+  let dropdown = document.createElement('select')
+  form.append(dropdown)
+
+  form.addEventListener('submit', function(e){
+    let input = document.querySelector("#new-task-description")
+    let task = document.createElement('li')
+      task.append(input.value)
+      
+      let button = document.createElement('button')
+      button.append("delete")
+   
+      document.querySelector("#tasks").append(task, button)
+      
+
+    let priority = document.querySelector("#mySelect")
+    if (priority.value == "High"){
+      task.style.color = "red"}
+    if (priority.value == "Medium"){
+      task.style.color = "orange"}
+    if (priority.value == "Low"){
+      task.style.color = "#ffca00"
+    }
+    
+    
+    e.preventDefault()
+   input.value = ""
+    button.addEventListener('click', function(){
+      task.remove()
+      button.remove()
+    })
+  })
+
+});
+
